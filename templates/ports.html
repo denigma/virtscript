@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/semantic.css') }}">
+
+    <script type='text/javascript' src="{{ url_for('static', filename='javascript/semantic.js') }}"></script>
+
+</HEAD>
+{{result}}
+
+<section class="ui blue piled segment">
+
+    <form action="{{ url_for('register') }}"  class="ui fluid form segment">
+        <div class="two fields">
+            <div class="field">
+                <label class="ui blue ribbon label">Container ID</label>
+                {{ form.id }}
+                <div class="ui small pointing label">
+                    VEID контейнера
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="ui blue label">Container NAME</label>
+                {{ form.name }}
+                <div class="ui small pointing label">
+                    hostname контейнера
+                </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="field">
+                <label>Container IP</label>
+                {{ form.ip }}
+                <div class="ui small pointing label">
+                    IP адрес контейнера
+                </div>
+            </div>
+            <div class="field">
+                <label>Banned IPs (with space)</label>
+                {{ form.banned }}
+                <div class="ui small pointing label">
+                    # IP и подсети, доступ к которым должен быть забаннен из контейнера
+                </div>
+            </div>
+            <div class="field">
+                <label>ALLOW2CT</label>
+                {{ form.allow2ct }}
+                <div class="ui small pointing label">
+                    # Разрешаем соединения между DMZ контейнером и этими подсетями
+                </div>
+            </div>
+            <div class="field">
+                <label>VERELAY</label>
+                {{ form.verelay }}
+                <div class="ui small pointing label">
+                    Можно ли контейнеру спамить?
+                </div>
+
+            </div>
+            <div class="field">
+                <label>DNAT4PORTS_TCP</label>
+                {{ form.id }}
+                <div class="ui small pointing label">
+                    Пробрасываем указанный внешний порт на контейнер
+                </div>
+
+            </div>
+            <div class="field">
+                <label>DNAT2PORTS_TCP</label>
+                {{ form.DNAT2PORTS_TCP }}
+                <div class="ui small pointing label">
+                    Пробрасываем на указанный порт контейнера внешний порт
+                </div>
+
+            </div>
+            <div class="field">
+                <label>DNAT4PORTS_UDP</label>
+                {{ form.DNAT4PORTS_UDP }}
+                <div class="ui small pointing label">
+                    Пробрасываем указанный внешний порт на контейнер
+                </div>
+
+            </div>
+            <div class="field">
+                <label>DNAT2PORTS_UDP</label>
+                {{ form.DNAT2PORTS_UDP }}
+                <div class="ui small pointing label">
+                    Пробрасываем на указанный порт контейнера внешний порт
+                </div>
+
+            </div>
+            <div class="field">
+                <label>DMZSTATUS</label>
+                {{ form.DMZSTATUS }}
+                <div class="ui small pointing label">
+                    В DMZ ли данный контейнер?
+                </div>
+
+            </div>
+        </div>
+        <div class="ui blue submit button"><input type="submit" class="ui submit button"></div>
+    </form>
+</section>
+
+</HTML>
+
+
+
+

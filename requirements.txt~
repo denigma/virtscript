@@ -1,0 +1,2 @@
+-e git://github.com/swayf/proxmoxer#egg=proxmoxer
+Flask="0.10.1"
