@@ -1,10 +1,9 @@
-<HTML>
-<HEAD>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/semantic.css') }}">
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
 
-    <script type='text/javascript' src="{{ url_for('static', filename='javascript/semantic.js') }}"></script>
-
-</HEAD>
+{% block content %}
 {{result}}
 
 <section class="ui blue piled segment">
@@ -104,8 +103,4 @@
     </form>
 </section>
 
-</HTML>
-
-
-
-
+{% endblock %}

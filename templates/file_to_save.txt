@@ -1,0 +1,11 @@
+CTID="{{form.id.data}}" # VEID контейнера
+CTNAME="{{form.name.data}}" # hostname контейнера
+CTIP="{{form.ip.data}}" # IP адрес контейнера
+BANNED="{{form.banned.data}}" # IP и подсети, доступ к которым должен быть забаннен из контейнера
+ALLOW2CT="{{form.allow2ct.data}}" # Разрешаем соединения между DMZ контейнером и этими подсетями
+VERELAY="{{form.verelay.data}}" # Можно ли контейнеру спамить?
+DNAT4PORTS_TCP="{{form.DNAT4PORTS_TCP.data}}" # Пробрасываем указанный внешний порт на контейнер
+DNAT2PORTS_TCP="{{form.DNAT2PORTS_TCP.data}}" # Пробрасываем на указанный порт контейнера внешний порт
+DNAT4PORTS_UDP="{{form.DNAT4PORTS_UDP.data}}" # Пробрасываем указанный внешний порт на контейнер
+DNAT2PORTS_UDP="{{form.DNAT2PORTS_UDP.data}}" # Пробрасываем на указанный порт контейнера внешний порт
+DMZSTATUS="{{form.DMZSTATUS.data}}" # В DMZ ли данный контейнер?
