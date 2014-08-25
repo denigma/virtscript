@@ -1,12 +1,7 @@
 {% extends "base.html" %}
-{% block head %}
-{{ super() }}
-{% endblock %}
 
 {% block content %}
-{{result}}
-
-<section class="ui blue piled segment">
+<section class="ui blue piled segment container" id="main">
 
     <form action="{{ url_for('register') }}"  class="ui fluid form segment">
         <div class="two fields">

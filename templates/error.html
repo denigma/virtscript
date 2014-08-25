@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+
 {% block content %}
 <section class="ui red piled segment container" id="main">
+    <div class="ui red message">
+        <h1>{{ title }}</h1>
+        {{ message }}
+    </div>
 
-<div class="ui red message">
-    <h1>ERROR 404</h1>
-    Nothing there, this page simply does not exist
-</div>
 </section>
+
 {% endblock %}

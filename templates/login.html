@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<div class="ui right green sidebar">
+    <form id="sign_form" action="{{ url_for('register') }}"  class="ui fluid form top attached segment">
+        <div class="item field">
+            <div class="field">
+                <label class="ui blue ribbon label">{{login.username.name}}</label>
+                {{ login.username }}
+            </div>
+            <div class="field">
+                <label class="ui blue ribbon label">{{login.password.label}}</label>
+                {{ login.password }}
+            </div>
+            <div class="field">
+                <label class="ui blue ribbon label">{{login.host.label}}</label>
+                {{ login.host }}
+            </div>
+
+        </div>
+        <div id="submit_btn" class="ui blue item submit button"><input type="submit" class="ui submit button"></div>
+    </form>
+
+</div>
+<script>
+    $('.ui.sidebar')
+            .sidebar('toggle')
+    ;
+    $(document).on('submit', '#sign_form', function(event) {
+        var options =  {
+            timeout: 5000,
+            push: true,
+            replace: false,
+            type: 'POST',
+            dataType: 'html',
+            scrollTo: 0,
+            maxCacheLength: 200
+        };
+        $.pjax.submit(event, '#main', options);
+        return false;
+    })
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+<section class="ui vertical blue segment container" id="main">
+
+</section>
+
+{% endblock %}
+

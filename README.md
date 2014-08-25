@@ -15,10 +15,12 @@ What we have to do:
 Getting started
 --------------------
 
-It is based on flask python micro-framework ( http://flask.pocoo.org/ ) and python proxmox API ( https://github.com/swayf/proxmoxer )
+It is based on flask python micro-framework ( http://flask.pocoo.org/ ) and python proxmoxia API ( https://github.com/swayf/proxmoxer )
 
 1). pip install -r requirements.txt
-2) python3 index.py
-3) open http://localhost:5000/ and fille the form
+2) python index.py //yes, unfortuantely to one stupid dependency I cannot use python3
+3) open http://localhost:5000/
+4) put valid login
+5) fill the form
 
 WARNING: at the moment it is not yet working

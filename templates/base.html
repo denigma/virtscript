@@ -1,20 +1,44 @@
-<HTML>
-
+{% if "X-PJAX" not in request.headers %}
+{% block head %}
 <HEAD>
-    {% block head %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/semantic.css') }}">
-
     <script type='text/javascript' src="{{ url_for('static', filename='javascript/semantic.js') }}"></script>
-    {% endblock %}
-</HEAD>
+    <script type='text/javascript' src="{{ url_for('static', filename='javascript/jquery.pjax.js') }}"></script>
+    <script type=text/javascript>
+        <!--just some configuration of sripts and pjax-->
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        $(document).pjax('a', $('#main'))
+        $(document).on('submit', 'form', function(event) {
+            event.preventDefault()
+            var container = $("#main")
+            $.pjax.submit(event, container)
+         })
 
-<BODY>
-{% block content %}
+    </script>
+</HEAD>
 {% endblock %}
 
+
+<BODY>
+{% endif %}
+{% block sidebar %}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container" id="main">
+
+</div>
+{% endblock %}
+
+{% if "X-PJAX" not in request.headers %}
 </BODY>
 
 </HTML>
+{% endif %}
 
 
 
